@@ -1,9 +1,3 @@
-# docker container run --interactive --rm --tty \
-#     --volume $HOME/.adom:/home/adom/.adom.data \
-#     --name adom \
-#     anthonymastrean/adom
-#
-
 FROM ubuntu
 
 LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
