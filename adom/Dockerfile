@@ -1,15 +1,27 @@
-# $ docker run -it -v $HOME/.adom:/home/user/.adom --name adom --read-only
+# docker container run --interactive --rm --tty \
+#     --volume $HOME/.adom:/home/adom/.adom.data \
+#     --name adom \
+#     anthonymastrean/adom
+#
 
 FROM ubuntu
-MAINTAINER Anthony Mastrean <anthony.mastrean@gmail.com>
 
-ENV HOME /home/user
-# ENV TERM xterm-256color
+LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
 
-RUN apt-get update -y && apt-get install wget -y
-RUN wget --output-document=- http://www.ancardia.com/download/adom_linux_ubuntu_64_r60_pub.tar.gz | tar --directory=/usr/local --extract --gzip --verbose
-RUN useradd --create-home --home-dir $HOME user && chown -R user:user $HOME
+ENV HOME /home/adom
+ENV TERM xterm-256color
 
-USER user
+RUN apt-get update && apt-get install --yes \
+        curl \
+    && rm -rf /var/lib/apt/lists/*
 
-CMD /usr/local/adom/adom
+RUN useradd --create-home adom
+
+USER adom
+
+WORKDIR $HOME
+
+RUN curl --silent http://www.ancardia.com/download/adom_linux_ubuntu_64_3.0.6.tar.gz \
+    | tar --extract --gzip --strip-components 1
+
+ENTRYPOINT ./adom
