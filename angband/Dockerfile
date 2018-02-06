@@ -46,7 +46,8 @@ RUN apt-get update && apt-get install --yes \
 
 COPY --from=build /usr/local/src/angband-4.1.2/angband_4.1.2-1_amd64.deb /tmp
 
-RUN dpkg -i /tmp/angband_4.1.2-1_amd64.deb
+RUN dpkg --install /tmp/angband_4.1.2-1_amd64.deb \
+    && rm -f /tmp/angband_4.1.2-1_amd64.deb
 
 RUN useradd --create-home angband
 
