@@ -5,8 +5,8 @@ http://www.adom.de/
 ## Run
 
 ```
-$ docker container run --interactive --rm --tty \
+$ docker run -it --rm \
     --name adom \
-    --volume $HOME/.adom:/home/adom/.adom.data \
+    -v $HOME/.adom:/home/adom/.adom.data \
     anthonymastrean/adom
 ```
