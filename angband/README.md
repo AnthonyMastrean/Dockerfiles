@@ -6,8 +6,6 @@ http://rephial.org/
 
 ## Compiling
 
-There's a lot going on to compile for Linux.
-
 http://trac.rephial.org/wiki/Compiling
 
 ## Run
