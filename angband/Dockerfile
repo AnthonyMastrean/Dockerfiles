@@ -1,9 +1,8 @@
 FROM ubuntu AS build
 
-ENV HOME /home/angband
-
 RUN apt-get update && apt-get install --yes \
         autoconf \
+        checkinstall \
         curl \
         gcc \
         libc6-dev \
@@ -25,9 +24,13 @@ RUN curl --silent http://rephial.org/downloads/4.1/angband-4.1.2.tar.gz \
 WORKDIR /usr/local/src/angband-4.1.2
 
 RUN ./autogen.sh \
-    && ./configure --disable-x11 --prefix=$HOME \
+    && ./configure \
+        --disable-x11 \
+        --with-private-dirs \
     && make \
-    && make install
+    && checkinstall -D \
+        --default \
+        --install=no
 
 
 
@@ -47,12 +50,14 @@ RUN apt-get update && apt-get install --yes \
     && locale-gen $LANG \
     && update-locale LANG=$LANG LANGUAGE=$LANG LC_ALL=$LANG
 
+COPY --from=build /usr/local/src/angband-4.1.2/angband_4.1.2-1_amd64.deb /tmp
+
+RUN dpkg -i /tmp/angband_4.1.2-1_amd64.deb
+
 RUN useradd --create-home angband
 
 USER angband
 
 WORKDIR $HOME
 
-COPY --chown=angband:angband --from=build $HOME $HOME/
-
-ENTRYPOINT ["./games/angband"]
+ENTRYPOINT ["/usr/local/games/angband"]
