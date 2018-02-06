@@ -24,13 +24,9 @@ RUN curl --silent http://rephial.org/downloads/4.1/angband-4.1.2.tar.gz \
 WORKDIR /usr/local/src/angband-4.1.2
 
 RUN ./autogen.sh \
-    && ./configure \
-        --disable-x11 \
-        --with-private-dirs \
+    && ./configure --disable-x11 --with-private-dirs \
     && make \
-    && checkinstall -D \
-        --default \
-        --install=no
+    && checkinstall -D --default --install=no
 
 
 
@@ -40,8 +36,6 @@ LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
 
 ENV HOME /home/angband
 ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
 ENV TERM xterm-256color
 
 RUN apt-get update && apt-get install --yes \
