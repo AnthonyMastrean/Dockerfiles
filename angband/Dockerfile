@@ -38,7 +38,8 @@ LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
 ENV LANG en_US.UTF-8
 ENV TERM xterm-256color
 
-RUN apt-get update && apt-get install --yes \
+RUN apt-get update \
+    && apt-get install --yes \
         locales \
     && rm -rf /var/lib/apt/lists/* \
     && locale-gen $LANG \
