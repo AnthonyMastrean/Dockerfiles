@@ -1,7 +1,8 @@
 FROM ubuntu
 
 RUN ["/bin/bash", "-c", "set -eo pipefail \
-        && apt-get update && apt-get install --yes \
+        && apt-get update \
+        && apt-get install --yes \
             curl \
         && echo 'deb https://crawl.develz.org/debian crawl 0.21' | tee -a /etc/apt/sources.list \
         && curl --silent https://crawl.develz.org/debian/pubkey | apt-key add - \
