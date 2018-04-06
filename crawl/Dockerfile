@@ -1,7 +1,5 @@
 FROM ubuntu
 
-ENV HOME /home/crawl
-
 RUN ["/bin/bash", "-c", "set -eo pipefail \
         && apt-get update && apt-get install --yes \
             curl \
@@ -12,8 +10,7 @@ RUN ["/bin/bash", "-c", "set -eo pipefail \
 
 RUN useradd --create-home crawl
 
+WORKDIR /home/crawl
 USER crawl
-
-WORKDIR $HOME
 
 ENTRYPOINT ["/usr/games/crawl"]
