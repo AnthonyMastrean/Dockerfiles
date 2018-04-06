@@ -1,6 +1,7 @@
 FROM ubuntu AS build
 
-RUN apt-get update && apt-get install --yes \
+RUN apt-get update \
+    && apt-get install --yes \
         autoconf \
         checkinstall \
         curl \
@@ -34,7 +35,6 @@ FROM ubuntu
 
 LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
 
-ENV HOME /home/angband
 ENV LANG en_US.UTF-8
 ENV TERM xterm-256color
 
@@ -51,8 +51,7 @@ RUN dpkg --install /tmp/angband_4.1.2-1_amd64.deb \
 
 RUN useradd --create-home angband
 
+WORKDIR /home/angband
 USER angband
-
-WORKDIR $HOME
 
 ENTRYPOINT ["/usr/local/games/angband"]
