@@ -5,7 +5,8 @@ LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
 ENV HOME /home/adom
 ENV TERM xterm-256color
 
-RUN apt-get update && apt-get install --yes \
+RUN apt-get update \
+    && apt-get install --yes \
         curl \
         libncurses5 \
         tar \
