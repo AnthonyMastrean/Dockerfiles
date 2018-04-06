@@ -2,7 +2,6 @@ FROM debian:stretch-slim
 
 LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
 
-ENV HOME /home/adom
 ENV TERM xterm-256color
 
 RUN apt-get update \
@@ -14,7 +13,7 @@ RUN apt-get update \
 
 RUN useradd --create-home adom
 
-WORKDIR $HOME
+WORKDIR /home/adom
 USER adom
 
 RUN curl --silent http://www.ancardia.com/download/adom_linux_debian_64_3.0.6.tar.gz \
