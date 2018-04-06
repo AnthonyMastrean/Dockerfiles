@@ -14,9 +14,8 @@ RUN apt-get update \
 
 RUN useradd --create-home adom
 
-USER adom
-
 WORKDIR $HOME
+USER adom
 
 RUN curl --silent http://www.ancardia.com/download/adom_linux_debian_64_3.0.6.tar.gz \
     | tar --extract --gzip --strip-components 1
