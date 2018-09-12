@@ -7,8 +7,8 @@ http://www.adom.de/
 ## Run
 
 ```
-$ docker run -it --rm \
-    --name adom \
+$ docker run --rm -it \
     -v $HOME/.adom:/home/adom/.adom.data \
+    --name adom \
     anthonymastrean/adom
 ```
