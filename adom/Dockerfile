@@ -5,8 +5,8 @@ LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
 ENV TERM xterm-256color
 
 RUN useradd -m adom
-
 WORKDIR /home/adom
+VOLUME /home/adom/.adom.data
 USER adom
 
 RUN apt-get update \
