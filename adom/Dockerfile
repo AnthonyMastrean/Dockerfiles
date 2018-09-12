@@ -4,19 +4,22 @@ LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
 
 ENV TERM xterm-256color
 
-RUN apt-get update \
-    && apt-get install --yes \
-        curl \
-        libncurses5 \
-        tar \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN useradd --create-home adom
+RUN useradd -m adom
 
 WORKDIR /home/adom
 USER adom
 
-RUN curl --silent http://www.ancardia.com/download/adom_linux_debian_64_3.0.6.tar.gz \
-    | tar --extract --gzip --strip-components 1
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        curl \
+        libncurses5 \
+        tar \
+    && curl -sS http://www.ancardia.com/download/adom_linux_debian_64_3.0.6.tar.gz \
+        | tar -xz --strip-components 1 \
+    && savedPackages="libncurses5" \
+    && apt-mark auto '.*' > /dev/null \
+    && apt-mark manual $savedPackages \
+    && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+    && rm -rf /var/cache/apt/* /var/lib/apt/lists/*
 
 ENTRYPOINT ["./adom"]
