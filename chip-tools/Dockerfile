@@ -2,7 +2,7 @@ FROM ubuntu
 
 ENV SNIB false
 
-RUN apt-get -y update \
+RUN apt-get update \
     && apt-get -y --no-install-recommends install \
         android-tools-fastboot \
         curl \
