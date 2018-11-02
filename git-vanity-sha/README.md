@@ -1,4 +1,4 @@
-[![Docker Build Status](https://img.shields.io/docker/build/anthonymastrean/git-vanity-sha.svg)](https://hub.docker.com/r/anthonymastrean/git-vanity-sha/builds/)
+[![Docker Build Status](https://img.shields.io/docker/build/anthonymastrean/git-vanity-sha.svg)](https://hub.docker.com/r/anthonymastrean/git-vanity-sha/builds/) [![GitHub Link](https://img.shields.io/badge/github-mattbaker%2Fgit--vanity--sha-blue.svg)](https://github.com/mattbaker/git-vanity-sha)
 
 # git vanity-sha
 
