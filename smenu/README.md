@@ -1,4 +1,4 @@
-[![Docker Build Status](https://img.shields.io/docker/build/anthonymastrean/smenu.svg)](https://hub.docker.com/r/anthonymastrean/smenu/builds/)
+[![Docker Build Status](https://img.shields.io/docker/build/anthonymastrean/smenu.svg)](https://hub.docker.com/r/anthonymastrean/smenu/builds/) [![GitHub Link](https://img.shields.io/badge/github-p--gen%2Fsmenu-blue.svg)](https://github.com/p-gen/smenu)
 
 # smenu
 
