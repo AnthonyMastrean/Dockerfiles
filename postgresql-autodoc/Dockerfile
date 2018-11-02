@@ -5,4 +5,4 @@ RUN apt-get update \
         postgresql-autodoc \
     && rm -fr /var/cache/apt/* /var/lib/apt/lists/*
 
-ENTRYPOINT ["postgresql-autodoc"]
+ENTRYPOINT ["postgresql_autodoc"]
