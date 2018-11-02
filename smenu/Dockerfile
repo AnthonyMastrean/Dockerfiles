@@ -1,5 +1,7 @@
 FROM debian:stretch-slim
 
+LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
+
 WORKDIR /usr/src
 
 RUN apt-get update \
