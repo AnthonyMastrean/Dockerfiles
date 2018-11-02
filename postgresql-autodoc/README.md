@@ -2,6 +2,8 @@
 
 # postgresql-autodoc
 
+Dumps a Postgres schema in several useful documentary forms.
+
 https://github.com/cbbrowne/autodoc
 
 ## Run
