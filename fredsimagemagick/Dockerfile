@@ -9,5 +9,5 @@ RUN apt-get update -y \
         imagemagick \
         wget \
     && wget http://www.fmwconcepts.com/imagemagick/script_list.txt \
-    && \
+    && egrep -o '^\w+' script_list.txt | xargs \
     && rm -fr /var/cache/apt/* /var/lib/apt/lists/*
