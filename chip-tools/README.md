@@ -1,4 +1,4 @@
-[![Docker Build Status](https://img.shields.io/docker/build/anthonymastrean/chip-tools.svg)](https://hub.docker.com/r/anthonymastrean/chip-tools/builds/) [![CHIP docs](https://img.shields.io/badge/website-docs.getchip.com-blue.svg)](https://web.archive.org/web/20180517005610/https://docs.getchip.com/chip.html#flash-chip-firmware)
+[![Docker Build Status](https://img.shields.io/docker/build/anthonymastrean/chip-tools.svg)](https://hub.docker.com/r/anthonymastrean/chip-tools/builds/) [![CHIP docs](https://img.shields.io/badge/docs-getchip.com-blue.svg)](https://web.archive.org/web/20180517005610/https://docs.getchip.com/chip.html#flash-chip-firmware)
 
 # C.H.I.P. Tools
 
