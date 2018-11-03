@@ -1,5 +1,7 @@
 FROM ruby:alpine
 
+LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
+
 RUN apk --no-cache --update add \
         git \
         openssh \
