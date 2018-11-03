@@ -1,5 +1,7 @@
 FROM ubuntu
 
+LABEL maintainer "Anthony Mastrean <anthony.mastrean@gmail.com>"
+
 ENV SNIB false
 
 RUN apt-get update \
