@@ -6,7 +6,7 @@ Finally, Dockerfiles!
 
 ## Build Patterns
 
-The recommendation is to use [multistage builds](https://docs.docker.com/develop/develop-images/multistage-build/) and, apparently, they're supported on the Docker Hub! But, you might still find a reason to write a goofy single-stage build.
+The recommendation is to use [multistage builds](https://docs.docker.com/develop/develop-images/multistage-build/) and, apparently, they're now supported on the Docker Hub! But, you might still find a reason to write a goofy single-stage build.
 
 ### apt-get
 
