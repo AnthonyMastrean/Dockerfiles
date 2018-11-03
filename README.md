@@ -2,7 +2,7 @@
 
 # Dockerfiles
 
-Finally, dockerfiles!
+Finally, Dockerfiles!
 
 ## Build Patterns
 
