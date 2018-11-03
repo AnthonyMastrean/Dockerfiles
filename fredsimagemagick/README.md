@@ -17,5 +17,5 @@ To run a specific script
 ```
 $ docker run --rm -it \
     --name fredsimagemagick \
-    anthonymastrean\fredsimagemagick <script> <opts>
+    anthonymastrean\fredsimagemagick [./script] [opts]
 ```
