@@ -4,6 +4,16 @@
 
 ## Run
 
+For a list of scripts
+
+```
+$ docker run --rm -it \
+    --name fredsimagemagick \
+    anthonymastrean\fredsimagemagick
+```
+
+To run a specific script
+
 ```
 $ docker run --rm -it \
     --name fredsimagemagick \
