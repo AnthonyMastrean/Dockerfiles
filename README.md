@@ -19,9 +19,8 @@ RUN apt-get update \
         bar \
         baz \
     && ... build commands... 
-    && savedPackages="bar" \
     && apt-mark auto '.*' > /dev/null \
-    && apt-mark manual $savedPackages \
+    && apt-mark manual "bar" \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && rm -fr /var/cache/apt/* /var/lib/apt/lists/*
 ```
