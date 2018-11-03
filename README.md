@@ -10,7 +10,7 @@ The recommendation is to use [multistage builds](https://docs.docker.com/develop
 
 ### apt-get
 
-I forget where I first saw this pattern, but the idea is to install all of the packages, do the work, then mark all of the unnecessary packages as purgable.
+I forget where I first saw this pattern, but the idea is to install all of the packages, including dev/build packages, do the work, then mark all of the unnecessary packages as purgable.
 
 ```
 RUN apt-get update \
