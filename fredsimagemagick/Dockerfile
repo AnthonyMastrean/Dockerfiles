@@ -18,4 +18,5 @@ RUN apt-get update \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && rm -fr *.txt /var/cache/apt/* /var/lib/apt/lists/*
 
-CMD ["/bin/sh", "-c", "ls -1"]
+ENTRYPOINT ["/bin/sh", "-c"]
+CMD ["ls -1"]
