@@ -6,7 +6,7 @@ RUN apk --no-cache --update add \
         git \
         git-lfs \
         openssh \
-    && wget -q -O /usr/local/bin/git-vanity-sha https://raw.githubusercontent.com/mattbaker/git-vanity-sha/master/git-vanity-sha \
+    && wget -q -O /usr/local/bin/git-vanity-sha https://raw.githubusercontent.com/AnthonyMastrean/git-vanity-sha/patch-1/git-vanity-sha \
     && chmod +x /usr/local/bin/git-vanity-sha
 
 VOLUME ["/git"]
